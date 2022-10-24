@@ -366,3 +366,7 @@ i {
 .delete_btn {
     margin: 0px 8px;
 }
+
+.errorlist li {
+    color: #d34a4a;
+}

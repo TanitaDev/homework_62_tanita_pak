@@ -15,11 +15,12 @@
             <li><a href="{% url 'index' %}"><i class="fa-solid fa-house-user"></i> На главную</a></li>
             <li><a href="{% url 'add' %}"><i class="fa-solid fa-list-check"></i> Добавить задачу</a></li>
             <li><a href="{% url 'projects' %}"><i class="fa-solid fa-laptop-code"></i> Проекты</a></li>
-            {% if user.is_authenticated %}
+            {% if request.user.is_authenticated %}
             <li>
                 <p>{{ user.name }}</p>
                 <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
+                    <p class="username_p">{{user.username}}</p>
                     <a>
                         <i class="fa-solid fa-right-from-bracket"></i> <input class="logout_btn" type="submit"
                                                                               value="Выход">
@@ -27,8 +28,9 @@
                 </form>
             </li>
             {% else %}
-            <li><a class="login_btn" href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i> Вход</a></li>
-            <li><a class="login_btn" href="{% url 'register' %}"><i class="fa-solid fa-user-plus"></i> Регистрация</a></li>
+            <li><a class="login_btn" href="{% url 'login' %}?next={{ request.get_full_path }}"><i class="fa-solid fa-right-to-bracket"></i> Вход</a></li>
+            <li><a class="login_btn" href="{% url 'register' %}"><i class="fa-solid fa-user-plus"></i> Регистрация</a>
+            </li>
             {% endif %}
         </ul>
         {% block header_block %}

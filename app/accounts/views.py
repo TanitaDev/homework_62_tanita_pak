@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.views.generic import TemplateView, CreateView
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
@@ -47,3 +48,11 @@ class RegisterView(CreateView):
         context = {}
         context['form'] = form
         return self.render_to_response(context)
+
+    def get_success_url(self):
+        next_url = self.request.GET.get('next')
+        if not next_url:
+            next_url = self.request.POST.get('next')
+        if not next_url:
+            next_url = reverse('index')
+        return next_url

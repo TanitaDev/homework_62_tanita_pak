@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.core.validators import MinLengthValidator
 
 
 class LoginForm(forms.Form):
@@ -9,9 +10,16 @@ class LoginForm(forms.Form):
 
 
 class CustomUserCreationForm(forms.ModelForm):
-    password = forms.CharField(label='Пароль', strip=False, required=True, widget=forms.PasswordInput(attrs={'class': 'input'}))
+    password = forms.CharField(label='Пароль', strip=False, required=True,
+                               widget=forms.PasswordInput(attrs={'class': 'input'}))
     password_confirm = forms.CharField(label='Подтвердите пароль', strip=False, required=True,
                                        widget=forms.PasswordInput(attrs={'class': 'input'}))
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data['first_name']
+        if len(first_name) == 0:
+            raise ValidationError('Поле имени не заполнено')
+        return first_name
 
     class Meta:
         model = User
@@ -22,7 +30,6 @@ class CustomUserCreationForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'input'}),
             'email': forms.EmailInput(attrs={'class': 'input', 'required': True})
         }
-
 
     def clean(self):
         cleaned_data = super().clean()
