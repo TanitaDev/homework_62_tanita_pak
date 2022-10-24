@@ -23,6 +23,7 @@ class CustomUserCreationForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'class': 'input', 'required': True})
         }
 
+
     def clean(self):
         cleaned_data = super().clean()
         password = cleaned_data.get('password')

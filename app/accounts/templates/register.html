@@ -7,14 +7,47 @@
 {% block todo_block %}
 <div class="todo_head">
     <div class="head_block">
-        <h2 class="task_title">Регистрация</h2>
+        <h2 class="task_title">Вход</h2>
     </div>
 </div>
 <div class="todo_body">
     <form class="todo_form" action="{% url 'register' %}" method="POST">
         {% csrf_token %}
-        {% bootstrap_form form %}
-        {% bootstrap_button button_type='submit' content='Регистрация' %}
+
+        {% if has_error %}
+        <p class="form-error">Неверное имя пользователя или пароль.</p>
+        {% endif %}
+        <p>
+            <label class="form_label" for="username">Имя пользователя:
+                <input required class="input" type="text" name="username" id="username">
+            </label>
+        </p>
+        <p>
+            <label class="form_label" for="password">Пароль:
+                <input required class="input" type="password" name="password" id="password"></label>
+        </p>
+
+        <p>
+            <label class="form_label" for="id_password_confirm">Подтвердите пароль:
+                <input required class="input" type="password" name="password_confirm" id="id_password_confirm"></label>
+        </p>
+
+        <p>
+            <label class="form_label" for="id_first_name">Имя:
+                <input required class="input" type="text" name="first_name" id="id_first_name"></label>
+        </p>
+
+        <p>
+            <label class="form_label" for="id_last_name">Фамилия:
+                <input required class="input" type="text" name="last_name" id="id_last_name"></label>
+        </p>
+
+        <p>
+            <label class="form_label" for="id_email">Email:
+                <input required class="input" type="email" name="email" id="id_email"></label>
+        </p>
+
+        <button class="btn green" type="submit">Регистрация</button>
     </form>
 </div>
 {% endblock %}
