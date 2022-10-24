@@ -28,6 +28,7 @@
             </li>
             {% else %}
             <li><a class="login_btn" href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i> Вход</a></li>
+            <li><a class="login_btn" href="{% url 'register' %}"><i class="fa-solid fa-user-plus"></i> Регистрация</a></li>
             {% endif %}
         </ul>
         {% block header_block %}
