@@ -378,5 +378,13 @@ i {
 }
 
 .tasks_in_project .task_list_in_project {
-    margin: 0px 0px 5px 0px;
+}
+
+.tasks_in_project_item {
+    display: flex;
+    margin: 0px 0px 10px 0px;
+}
+
+.tasks_in_project_item i {
+    margin: 0px 0px 0px 10px;
 }

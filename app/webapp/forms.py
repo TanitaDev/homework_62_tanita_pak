@@ -22,3 +22,16 @@ class TaskForm(forms.ModelForm):
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label="Найти",
                              widget=forms.TextInput(attrs={'class': 'search_input', 'value': ''}))
+
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['name', 'description', 'user', 'start_date', 'finish_date']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'input'}),
+            'description': forms.Textarea(attrs={'cols': 60, 'rows': 5, 'class': 'input'}),
+            'user': forms.SelectMultiple(attrs={'class': 'input'}),
+            'start_date': forms.DateInput(attrs={'class': 'input'}),
+            'finish_date': forms.DateInput(attrs={'class': 'input'}),
+        }

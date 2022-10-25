@@ -5,7 +5,7 @@
 <div class="task_block">
     <div class="todo_head">
         <div class="head_block">
-            <h2 class="task_title task_icon">{{ project.name }} <a href=""><i
+            <h2 class="task_title task_icon">{{ project.name }} <a href="{% url 'project_update' project.pk %}"><i
                     class="fa-solid fa-pen-to-square"></i><span>редактировать</span></a></h2>
         </div>
     </div>
@@ -15,16 +15,27 @@
             <div class="task_footer">
                 <p>
                     <b>Задачи:</b>
-                <p class="tasks_in_project">
+                <div class="tasks_in_project">
                     {% for task in project.project.all %}
                     <a href="{% url 'task_view' task.pk %}" class="task_list_in_project">
                         {{ task.summary }}
                     </a>
                     {% endfor %}
+                </div>
                 </p>
+                <p>
+                    <b>Пользователи:</b>
+                <div class="tasks_in_project">
+                    {% for us in project.user.all %}
+                    <div class="tasks_in_project_item">
 
+                        <a href="" class="task_list_in_project">
+                            {{ us.username }}
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
                 </p>
-                <p><b>Пользователь: </b>{{ project.user.all }}</p>
                 <p><b>Дата начала: </b>{{ project.start_date }}</p>
             </div>
         </div>

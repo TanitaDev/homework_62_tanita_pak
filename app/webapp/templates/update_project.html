@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Редактировать{% endblock %}
+{% block todo_block %}
+<div class="todo_head">
+    <div class="head_block">
+        <h2 class="task_title">Редактировать проект</h2>
+    </div>
+</div>
+<div class="todo_body">
+    <form class="todo_form" action="{% url 'project_update' project.pk %}" method="post">
+        {% csrf_token %}
+        <div class="form_error">{{ form.non_field_errors }}</div>
+        <p>
+            <label class="form_label" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name }}
+        <div class="form_error">{{ form.name.errors }}</div>
+        </p>
+
+         <p>
+            <label class="form_label" for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+            {{ form.description }}
+        <div class="form_error">{{ form.description.errors }}</div>
+        </p>
+
+        <p>
+            <label class="form_label" for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
+            {{ form.user }}
+        <div class="form_error">{{ form.user.errors }}</div>
+        </p>
+
+        <p>
+            <label class="form_label" for="{{ form.start_date.id_for_label }}">{{ form.start_date.label }}</label>
+            {{ form.start_date }}
+        <div class="form_error">{{ form.start_date.errors }}</div>
+        </p>
+
+         <p>
+            <label class="form_label" for="{{ form.finish_date.id_for_label }}">{{ form.finish_date.label }}</label>
+            {{ form.finish_date }}
+        <div class="form_error">{{ form.finish_date.errors }}</div>
+        </p>
+
+        <button class="btn green" type="submit">Редактировать</button>
+    </form>
+</div>
+{% endblock %}

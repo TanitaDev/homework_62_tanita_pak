@@ -97,3 +97,13 @@ class ProjectDetailView(DetailView):
     template_name = 'project_view.html'
     model = Project
     pk_url_kwarg = 'pk'
+
+
+class UpdateProject(UpdateView):
+    template_name = 'update_project.html'
+    model = Project
+
+    form_class = ProjectForm
+
+    def get_success_url(self):
+        return reverse('project_view', kwargs={'pk': self.object.pk})

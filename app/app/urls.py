@@ -13,6 +13,7 @@ urlpatterns = [
     path('delete/<int:pk>/', TaskDelete.as_view(), name='delete'),
     path('projects', ProjectView.as_view(), name='projects'),
     path('project/<int:pk>', ProjectDetailView.as_view(), name='project_view'),
+    path('project/update/<int:pk>', UpdateProject.as_view(), name='project_update'),
 
     path("accounts/", include('accounts.urls'))
 ]

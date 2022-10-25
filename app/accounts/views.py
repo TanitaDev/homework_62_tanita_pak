@@ -1,9 +1,11 @@
+from django.contrib.auth.models import User
 from django.urls import reverse
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 
 from accounts.forms import LoginForm, CustomUserCreationForm
+from webapp.models import Project
 
 
 class LoginView(TemplateView):
@@ -56,3 +58,9 @@ class RegisterView(CreateView):
         if not next_url:
             next_url = reverse('index')
         return next_url
+
+
+class DeleteUser(DeleteView):
+    template_name = 'delete_user.html'
+    model = User
+
