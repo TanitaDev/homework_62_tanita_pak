@@ -91,3 +91,9 @@ class ProjectView(ListView):
         context = super(ProjectView, self).get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
         return context
+
+
+class ProjectDetailView(DetailView):
+    template_name = 'project_view.html'
+    model = Project
+    pk_url_kwarg = 'pk'

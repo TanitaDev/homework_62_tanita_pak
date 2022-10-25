@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ task.summary }}{% endblock %}
+{% block todo_block %}
+<div class="task_block">
+    <div class="todo_head">
+        <div class="head_block">
+            <h2 class="task_title task_icon">{{ project.name }} <a href=""><i
+                    class="fa-solid fa-pen-to-square"></i><span>редактировать</span></a></h2>
+        </div>
+    </div>
+    <div class="todo_body">
+        <div class="task_body">
+            <p>{{ project.description }}</p>
+            <div class="task_footer">
+                <p>
+                    <b>Задачи:</b>
+                <p class="tasks_in_project">
+                    {% for task in project.project.all %}
+                    <a href="{% url 'task_view' task.pk %}" class="task_list_in_project">
+                        {{ task.summary }}
+                    </a>
+                    {% endfor %}
+                </p>
+
+                </p>
+                <p><b>Пользователь: </b>{{ project.user.all }}</p>
+                <p><b>Дата начала: </b>{{ project.start_date }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

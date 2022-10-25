@@ -294,8 +294,9 @@ i {
 
 .project_title {
     font-size: 22px;
-    margin: 0px 0px 17px 0px;
+    margin: 0px 0px 15px 0px;
     font-weight: bold;
+    display: inline-block;
 }
 
 .task_label {
@@ -369,4 +370,13 @@ i {
 
 .errorlist li {
     color: #d34a4a;
+}
+
+.tasks_in_project {
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks_in_project .task_list_in_project {
+    margin: 0px 0px 5px 0px;
 }

@@ -10,7 +10,7 @@
 <div class="todo_body">
     {% for p in projects %}
     <ul class="project_tasks_item dashed">
-        <p class="project_title">{{ p.name }}</p>
+        <a href="{% url 'project_view' p.pk %}" class="project_title">{{ p.name }}</a>
         <p class="task_label">Задачи:</p>
         {% for task in p.project.all %}
         <li class="tasks_list_item">

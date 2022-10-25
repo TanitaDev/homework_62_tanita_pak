@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Task(models.Model):
@@ -36,6 +37,7 @@ class Project(models.Model):
     finish_date = models.DateField(verbose_name="Дата окончания", null=True, blank=True)
     name = models.CharField(max_length=200, null=False, blank=False, verbose_name="Название")
     description = models.TextField(max_length=3000, null=False, blank=False, verbose_name='Описание')
+    user = models.ManyToManyField(User, related_name='user')
 
     def __str__(self):
         return self.name
