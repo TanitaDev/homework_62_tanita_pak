@@ -155,20 +155,6 @@
 },
 {
   "model": "webapp.task",
-  "pk": 16,
-  "fields": {
-    "summary": "инициализировать проект джанго",
-    "description": "инициализировать проект джанго для проекта №61",
-    "status": 1,
-    "type": 1,
-    "created_at": "2022-10-19T10:37:02.662Z",
-    "updated_at": "2022-10-19T10:37:02.662Z",
-    "project": 2,
-    "is_deleted": false
-  }
-},
-{
-  "model": "webapp.task",
   "pk": 17,
   "fields": {
     "summary": "ДЗ 59 (3й этап)",
@@ -200,11 +186,11 @@
   "pk": 19,
   "fields": {
     "summary": "Прогулка",
-    "description": "Чаще гулять",
+    "description": "Чаще гулять, воздухом дышать",
     "status": 1,
     "type": 3,
     "created_at": "2022-10-19T12:15:09.385Z",
-    "updated_at": "2022-10-19T12:15:09.385Z",
+    "updated_at": "2022-10-21T10:47:11.135Z",
     "project": 1,
     "is_deleted": false
   }
@@ -225,14 +211,70 @@
 },
 {
   "model": "webapp.task",
-  "pk": 21,
+  "pk": 22,
+  "fields": {
+    "summary": "Инициализация",
+    "description": "Инициализация проекта на джанго",
+    "status": 1,
+    "type": 1,
+    "created_at": "2022-10-19T22:14:09.784Z",
+    "updated_at": "2022-10-19T22:14:09.784Z",
+    "project": 2,
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 23,
   "fields": {
     "summary": "Дисплей",
-    "description": "Настроить цветопередачу на экране монитора",
+    "description": "Настроить цетопередачу",
     "status": 1,
     "type": 3,
-    "created_at": "2022-10-19T21:32:18.509Z",
-    "updated_at": "2022-10-19T21:32:18.509Z",
+    "created_at": "2022-10-21T10:48:02.023Z",
+    "updated_at": "2022-10-21T10:48:02.023Z",
+    "project": 1,
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 25,
+  "fields": {
+    "summary": "Второй этап (62)",
+    "description": "доделать второй этап домашки №62",
+    "status": 2,
+    "type": 1,
+    "created_at": "2022-10-25T10:26:41.661Z",
+    "updated_at": "2022-10-25T10:26:41.661Z",
+    "project": 4,
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 26,
+  "fields": {
+    "summary": "Третий этап (62)",
+    "description": "сделать третий этап домашки 62",
+    "status": 1,
+    "type": 1,
+    "created_at": "2022-10-25T10:27:02.440Z",
+    "updated_at": "2022-10-25T10:27:02.441Z",
+    "project": 4,
+    "is_deleted": false
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 27,
+  "fields": {
+    "summary": "dw",
+    "description": "dwq",
+    "status": 1,
+    "type": 1,
+    "created_at": "2022-10-25T12:41:30.042Z",
+    "updated_at": "2022-10-25T12:41:30.042Z",
     "project": 1,
     "is_deleted": false
   }
@@ -286,7 +328,10 @@
     "start_date": "2022-10-18",
     "finish_date": null,
     "name": "Общий проект",
-    "description": "Добавление базовых классовых представлений и новой модели - Проект"
+    "description": "Добавление базовых классовых представлений и новой модели - Проект",
+    "user": [
+      1
+    ]
   }
 },
 {
@@ -296,7 +341,38 @@
     "start_date": "2022-10-18",
     "finish_date": null,
     "name": "Проект №61",
-    "description": "сделать аутентификацию"
+    "description": "сделать аутентификацию",
+    "user": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 4,
+  "fields": {
+    "start_date": "2022-10-23",
+    "finish_date": null,
+    "name": "Проект №62",
+    "description": "Домашнее задание номер  62",
+    "user": [
+      9
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 5,
+  "fields": {
+    "start_date": "2022-01-22",
+    "finish_date": null,
+    "name": "Пробный",
+    "description": "описание пробного",
+    "user": [
+      9,
+      10,
+      11
+    ]
   }
 },
 {
@@ -304,7 +380,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$IDCaRO0j5WgNcGxil0NITw$DXpno5GcTFyQpvzxE8vc31QBtHQNLORiZ1x/1/lxzpg=",
-    "last_login": "2022-10-18T23:17:17.144Z",
+    "last_login": "2022-10-25T11:25:55.487Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -314,6 +390,138 @@
     "is_active": true,
     "date_joined": "2022-10-06T17:11:46.678Z",
     "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$Ry3U5njkjaF8VZS2XuJLiw$vMhgzklDNFuw++N0rStRXMAVwtB3rtZaLSwjkUBu9LI=",
+    "last_login": "2022-10-24T13:57:38.359Z",
+    "is_superuser": false,
+    "username": "maq",
+    "first_name": "Maqsim",
+    "last_name": "He",
+    "email": "tanitych@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-24T13:57:38.217Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$9VLROOKsaGTQfnXqXLcBA6$yvKzDbxnKDyM5pabCPZfkbnIix6TuhB/ZcDM6EOn/pY=",
+    "last_login": "2022-10-24T16:50:56Z",
+    "is_superuser": false,
+    "username": "any_user",
+    "first_name": "User",
+    "last_name": "Userov",
+    "email": "user@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-24T16:50:56Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$Th352rwH3xk5bsQDLEDvyW$jxx5MjS+1vKNHZPbYO3Dc6k9eBG1a9W1+OGQt5NiHCE=",
+    "last_login": "2022-10-25T11:23:39.356Z",
+    "is_superuser": false,
+    "username": "useruser",
+    "first_name": "Us",
+    "last_name": "Su",
+    "email": "qwe@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T11:23:39.221Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$ZOXbjcg5G0iNeMeEidzO46$aaQW6FXnY37WWX72RVxzD3xZfRI8S0cu7HnA6ze4HJs=",
+    "last_login": "2022-10-25T11:24:00.112Z",
+    "is_superuser": false,
+    "username": "useruser2",
+    "first_name": "Uss",
+    "last_name": "Suu",
+    "email": "qwe@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T11:23:59.975Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$FMCmLfWFKCCTTswVFQeWmf$Qa5HrK/apqUE2RsbzIbUGzBFIVVAEMeh/SWJ438esxg=",
+    "last_login": "2022-10-25T12:38:48Z",
+    "is_superuser": false,
+    "username": "manager",
+    "first_name": "manager_first_name",
+    "last_name": "manager_last_name",
+    "email": "manager@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T12:38:47Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$mjphAAk2WGiOgsfPoTUKqc$+UQXz/t55omLNJm9PzrU2HCb3cDgUIpNlty2S3kDrk4=",
+    "last_login": "2022-10-25T12:41:14.372Z",
+    "is_superuser": false,
+    "username": "lead",
+    "first_name": "lead_name",
+    "last_name": "lead_surname",
+    "email": "lead@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T12:39:16Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 15,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$0LJjd8ZQOkjRcC9rPLzwL3$WAktnD2NMoVYDGKzQDQFOKrSvrFIIgtwn21y1u/5N/Q=",
+    "last_login": "2022-10-25T12:41:22.521Z",
+    "is_superuser": false,
+    "username": "dev",
+    "first_name": "dev_name",
+    "last_name": "dev_surname",
+    "email": "dev@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T12:39:36Z",
+    "groups": [
+      3
+    ],
     "user_permissions": []
   }
 }
